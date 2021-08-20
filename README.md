@@ -59,14 +59,14 @@ The purpose of this analysis was to determine credit card risk through the use o
 ![EasyEnsemble](https://user-images.githubusercontent.com/81761879/130286049-51139577-ee7f-431c-b185-1a0c3ecbaf43.PNG)
 
 * Model had a high balanced accuracy score of 93.2%
-* Very high precision (100%) for detecting low-risk applicants, but very low precision (9%) of predicting high-risk applicants 
+* Very high precision (100%) for detecting low-risk applicants, but low precision (9%) of predicting high-risk applicants 
 * High sensitivity for predicting both low-risk applicants (94%)and high-risk applicants (92%)
 
 
 
  ## Summary
- 
- Overall,  none of the models performed very well with only the Balanced Random Forest and Easy Ensemble models having accuracy scores above 70%. In addition, while one may be tempted to look at the high  accuracy and sensitivity scores of the Easy Ensemble model and think this would be a good choice, it was still only able to correctly predict 9% of high-risk applicants. That means over 90% of high-risk applicants would have slipped through the cracks. Due to these outcomes, I would not recommend any of these models for predicting credit risk of future applicants. However, that being said, the Easy Ensemble model certainly showed the most promise. Perhaps by dropping several the less relevant variables from the model (there were over 90 of these factored), we could increase the precision of the model specifically for identifying high-risk applicants.
+
+Overall, many of the models struggled to accurately predict future credit risk, with only the Balanced Random Forest and Easy Ensemble models having accuracy scores above 70%. Due to the nature of credit risk, it would seem having high sensitivty would be more important than precision relative to detecting high-risk applicants. Therefore, I would recommend using the Easy Ensemble Model for predicting future credit risk, as it had sensitvity above 90% for both groups. While the model may be overly aggresive with predicting high-credit risk as evident by it's low precision score for this group, due to the low volume of these types of applicants, it would be much easier to then individually evaluate these on a case by case basis if needed. In addition, the model could likely be further improved by focusing on specific variables most relevant to credit risk and dropping those variables that are not (there were over 90 columns of variables in the data set).
 
 
 
